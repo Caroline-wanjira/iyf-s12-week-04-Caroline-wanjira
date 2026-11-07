@@ -221,10 +221,10 @@ for (let i = 0; i < 5; i++) {
 }
 
 // While loop (named whileCount because "count" is already used above)
-let count = 0;
-while (count < 5) {
-    console.log(count);
-    Count++;
+let whilecount = 0;
+while (whilecount < 5) {
+    console.log(whilecount);
+    whilecount++;
 }
 
 // For...of (arrays)
