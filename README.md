@@ -41,4 +41,4 @@ A collection of JavaScript exercises covering the fundamentals: variables, data 
 
 ## Screenshots 
 
-![Console output](console-output)
+![Console output](console-output.png)
