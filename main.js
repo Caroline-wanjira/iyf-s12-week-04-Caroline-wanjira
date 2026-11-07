@@ -318,3 +318,68 @@ console.log(calculate(10, "/", 0));   // Error message
 console.log(calculate(10, "%", 3));   // 1
 console.log(calculate(2, "**", 3));   // 8
 console.log(calculate(10, "&", 3));   // Invalid operator
+
+
+// ===== Task 8.1: Arrays =====
+
+// Exercise 1: Array Basics
+
+// Creating arrays
+const fruits = ["apple", "banana", "orange"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = ["hello", 42, true, null];
+
+// Accessing elements
+console.log(fruits[0]);      // apple
+console.log(fruits.length);  // 3
+
+// Modifying arrays
+fruits.push("grape");        // Add to end
+fruits.unshift("mango");     // Add to start
+fruits.pop();                // Remove from end
+fruits.shift();              // Remove from start
+console.log("Fruits now:", fruits);
+
+// Exercise 2: Array Methods
+
+// forEach - do something with each element
+numbers.forEach(num => console.log(num * 2));
+
+// map - transform each element
+const doubled = numbers.map(num => num * 2);
+
+// filter - keep elements that pass a test
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+// find - get first element that passes test
+const firstEven = numbers.find(num => num % 2 === 0);
+
+// reduce - combine all elements
+const sum = numbers.reduce((total, num) => total + num, 0);
+
+// includes - check if element exists
+console.log(numbers.includes(3)); // true
+
+console.log("Doubled:", doubled);
+console.log("Even numbers:", evenNumbers);
+console.log("First even:", firstEven);
+console.log("Sum:", sum);
+
+// Build: Use array methods to:
+const sampleNumbers = [-5, 3, 12, -2, 8, 15];
+
+// 1. Double all numbers in an array
+const doubledSample = sampleNumbers.map(num => num * 2);
+console.log("1. Doubled:", doubledSample);
+
+// 2. Filter out negative numbers
+const noNegatives = sampleNumbers.filter(num => num >= 0);
+console.log("2. No negatives:", noNegatives);
+
+// 3. Find the first number greater than 10
+const firstOverTen = sampleNumbers.find(num => num > 10);
+console.log("3. First number over 10:", firstOverTen);
+
+// 4. Calculate the product of all numbers
+const product = sampleNumbers.reduce((total, num) => total * num, 1);
+console.log("4. Product:", product);
