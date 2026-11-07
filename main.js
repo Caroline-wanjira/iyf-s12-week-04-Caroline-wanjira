@@ -493,3 +493,45 @@ console.log("7. Any student above 90?", hasTopStudent);
 // 8. Check if all students are passing (grade >= 60)
 const allPassing = students.every(student => student.grade >= 60);
 console.log("8. All passing?", allPassing);
+
+
+// ===== Task 8.4: JSON - Data as Text =====
+
+const json = '{"name":"Wanjiku","grades":{"math":88,"english":92}}';
+
+// Text -> object
+const student = JSON.parse(json);
+console.log(student.grades.math);   // 88
+
+// Object -> text (2 = indent, for readability)
+const backToText = JSON.stringify(student, null, 2);
+console.log(typeof backToText);     // "string"
+
+const postsJson = '[{"id":1,"title":"Welcome","likes":12,"published":true},{"id":2,"title":"Draft ideas","likes":0,"published":false},{"id":3,"title":"Week 4 recap","likes":30,"published":true}]';
+
+// 1. Parse it into an array
+const posts = JSON.parse(postsJson);
+console.log("1. Parsed posts:", posts);
+
+// 2. Keep only published posts
+const publishedPosts = posts.filter(post => post.published);
+console.log("2. Published:", publishedPosts);
+
+// 3. Sort them by likes, highest first
+const sortedPosts = [...publishedPosts].sort((x, y) => y.likes - x.likes);
+console.log("3. Sorted by likes:", sortedPosts);
+
+// 4. Map them to strings like "Week 4 recap (30 likes)"
+const postLabels = sortedPosts.map(post => `${post.title} (${post.likes} likes)`);
+console.log("4. Labels:", postLabels);
+
+// 5. JSON.stringify the filtered array back to text
+const publishedText = JSON.stringify(sortedPosts);
+console.log("5. Back to text:", publishedText);
+
+
+try {
+    JSON.parse("{bad json}");
+} catch (error) {
+    console.log("Invalid JSON:", error.message);
+}
