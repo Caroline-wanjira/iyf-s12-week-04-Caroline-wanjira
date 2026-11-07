@@ -264,3 +264,57 @@ for (let n = 1; n <= 100; n++) {
 for (let row = 1; row <= 5; row++) {
     console.log("*".repeat(row));
 }
+
+
+// ===== Mini-Project: Calculator =====
+
+function addNumbers(a, b) {
+    return a + b;
+}
+
+function subtractNumbers(a, b) {
+    return a - b;
+}
+
+function multiplyNumbers(a, b) {
+    return a * b;
+}
+
+function divideNumbers(a, b) {
+    if (b === 0) {
+        return "Error: Cannot divide by zero";
+    }
+    return a / b;
+}
+
+function calculate(num1, operator, num2) {
+    switch (operator) {
+        case "+":
+            return addNumbers(num1, num2);
+        case "-":
+            return subtractNumbers(num1, num2);
+        case "*":
+            return multiplyNumbers(num1, num2);
+        case "/":
+            return divideNumbers(num1, num2);
+        case "%":
+            if (num2 === 0) {
+                return "Error: Cannot divide by zero";
+            }
+            return num1 % num2;
+        case "**":
+            return num1 ** num2;
+        default:
+            return "Invalid operator";
+    }
+}
+
+// Test
+console.log(calculate(10, "+", 5));   // 15
+console.log(calculate(10, "-", 5));   // 5
+console.log(calculate(10, "*", 5));   // 50
+console.log(calculate(10, "/", 5));   // 2
+console.log(calculate(10, "/", 0));   // Error message
+console.log(calculate(10, "%", 3));   // 1
+console.log(calculate(2, "**", 3));   // 8
+console.log(calculate(10, "&", 3));   // Invalid operator
